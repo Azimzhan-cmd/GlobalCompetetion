@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Проблема безработицы в Казахстане</title>
+<meta name="description" content="Глубокий анализ проблемы безработицы в Казахстане: факты, причины, пути решения и мировой опыт.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">🇰🇿 <span>Безработица в Казахстане</span></div>
+    <ul class="nav-links">
+      <li><a href="#speakers">👥 Докладчики</a></li>
+      <li><a href="#slide1">Проблема</a></li>
+      <li><a href="#slide2">Факты</a></li>
+      <li><a href="#slide3">Причины</a></li>
+      <li><a href="#slide4">Решения</a></li>
+      <li><a href="#slide5">Мировой опыт</a></li>
+      <li><a href="#slide6">Наша позиция</a></li>
+    </ul>
+    <button class="burger" id="burgerBtn">☰</button>
+  </div>
+</nav>
+
+<!-- SPEAKERS OVERVIEW -->
+<section class="speakers-section" id="speakers">
+  <div class="slide-content">
+    <div class="badge" style="margin-bottom:2rem">РАСПРЕДЕЛЕНИЕ РОЛЕЙ</div>
+    <h2 class="spk-title">Кто и что рассказывает?</h2>
+    <p class="spk-sub">Презентация разделена на 3 части — по 2 слайда на каждого докладчика</p>
+
+    <div class="speakers-grid">
+
+      <!-- SPEAKER 1 -->
+      <div class="speaker-card spk1">
+        <div class="spk-avatar">👨‍💼</div>
+        <div class="spk-num">Докладчик 1</div>
+        <h3 class="spk-name">Слайды 1–2</h3>
+        <div class="spk-topic">«Проблема + Доказательства»</div>
+        <ul class="spk-list">
+          <li>🎯 <strong>Слайд 1</strong> — В чём суть проблемы безработицы в Казахстане. Ключевые цифры: 4,6%, 30% теневой экономики, 9,3 млн занятых</li>
+          <li>📊 <strong>Слайд 2</strong> — Доказательства: статистика МОТ, динамика 2019–2024, скрытая безработица, гендерный разрыв, региональные различия</li>
+        </ul>
+        <div class="spk-time">⏱ ~3–4 минуты</div>
+      </div>
+
+      <!-- SPEAKER 2 -->
+      <div class="speaker-card spk2">
+        <div class="spk-avatar">👩‍🎓</div>
+        <div class="spk-num">Докладчик 2</div>
+        <h3 class="spk-name">Слайды 3–4</h3>
+        <div class="spk-topic">«Причины + Пути решения»</div>
+        <ul class="spk-list">
+          <li>🔍 <strong>Слайд 3</strong> — 6 причин безработицы: несоответствие образования, автоматизация, регионы, теневая экономика, демография, нефтезависимость</li>
+          <li>💡 <strong>Слайд 4</strong> — Пути решения: Концепция 2024–2029, «Bastau Business», реформа ПТО, цифровые центры занятости</li>
+        </ul>
+        <div class="spk-time">⏱ ~3–4 минуты</div>
+      </div>
+
+      <!-- SPEAKER 3 -->
+      <div class="speaker-card spk3">
+        <div class="spk-avatar">🧑‍💻</div>
+        <div class="spk-num">Докладчик 3</div>
+        <h3 class="spk-name">Слайды 5–6</h3>
+        <div class="spk-topic">«Мировой опыт + Наша позиция»</div>
+        <ul class="spk-list">
+          <li>🌍 <strong>Слайд 5</strong> — Что уже делает мир: Германия (Kurzarbeit), Япония (Hello Work), Ю. Корея (стартапы), МОТ</li>
+          <li>💬 <strong>Слайд 6</strong> — Собственная позиция: роль студента, работодателя, государства; итоговый вывод о будущем Казахстана</li>
+        </ul>
+        <div class="spk-time">⏱ ~3–4 минуты</div>
+      </div>
+
+    </div>
+
+    <div class="spk-flow">
+      <div class="spk-flow-item s1">1️⃣ Докладчик 1</div>
+      <div class="spk-arrow">→</div>
+      <div class="spk-flow-item s2">2️⃣ Докладчик 2</div>
+      <div class="spk-arrow">→</div>
+      <div class="spk-flow-item s3">3️⃣ Докладчик 3</div>
+    </div>
+  </div>
+</section>
+
+<!-- HERO / SLIDE 1 -->
+<section class="slide hero-slide" id="slide1">
+  <div class="hero-bg"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="slide-content hero-content">
+    <div class="spk-pill spk-pill-1">👨‍💼 Докладчик 1</div>
+    <div class="badge animate-fade">СЛАЙД 1 · В ЧЁМ ПРОБЛЕМА</div>
+    <h1 class="hero-title animate-up">Проблема<br><span class="gold">Безработицы</span><br>в Казахстане</h1>
+    <p class="hero-subtitle animate-up delay-1">Официальные цифры скрывают реальность: миллионы казахстанцев работают в тени, не имеют достойного заработка и социальной защиты.</p>
+    <div class="hero-stats animate-up delay-2">
+      <div class="hero-stat">
+        <span class="stat-num" data-target="4.6">0</span><span class="stat-unit">%</span>
+        <p>Официальная безработица (2024)</p>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num" data-target="30">0</span><span class="stat-unit">%</span>
+        <p>Занятых в теневой экономике</p>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num" data-target="9.3">0</span><span class="stat-unit">млн</span>
+        <p>Занятых в экономике</p>
+      </div>
+    </div>
+    <a href="#slide2" class="cta-btn animate-up delay-3">Изучить факты ↓</a>
+  </div>
+  <div class="scroll-indicator">▼</div>
+</section>
+
+<!-- SLIDE 2: ДОКАЗАТЕЛЬСТВА -->
+<section class="slide dark-slide" id="slide2">
+  <div class="slide-content">
+    <div class="spk-pill spk-pill-1">👨‍💼 Докладчик 1</div>
+    <div class="badge">СЛАЙД 2 · ДОКАЗАТЕЛЬСТВА И ЦИФРЫ</div>
+    <h2>Реальные данные рынка труда</h2>
+    <p class="section-sub">Казахстан демонстрирует низкие официальные показатели, однако глубокий анализ выявляет серьёзные структурные проблемы</p>
+
+    <div class="stats-grid">
+      <div class="stat-card glow-blue">
+        <div class="stat-icon">📊</div>
+        <div class="big-num">4,6%</div>
+        <div class="stat-label">Уровень безработицы по методологии МОТ (2024)</div>
+      </div>
+      <div class="stat-card glow-gold">
+        <div class="stat-icon">👤</div>
+        <div class="big-num">~450 000</div>
+        <div class="stat-label">Официально безработных граждан</div>
+      </div>
+      <div class="stat-card glow-red">
+        <div class="stat-icon">🌑</div>
+        <div class="big-num">~2,1 млн</div>
+        <div class="stat-label">Самозанятых без социальной защиты</div>
+      </div>
+      <div class="stat-card glow-purple">
+        <div class="stat-icon">🎓</div>
+        <div class="big-num">3,4%</div>
+        <div class="stat-label">Молодёжная безработица (15–35 лет)</div>
+      </div>
+    </div>
+
+    <div class="chart-section">
+      <h3>Динамика уровня безработицы (2019–2024)</h3>
+      <div class="bar-chart" id="barChart">
+        <div class="bar-item">
+          <div class="bar-fill" style="--h:72%"><span class="bar-val">4,8%</span></div>
+          <div class="bar-year">2019</div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-fill" style="--h:75%"><span class="bar-val">5,0%</span></div>
+          <div class="bar-year">2020</div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-fill" style="--h:69%"><span class="bar-val">4,9%</span></div>
+          <div class="bar-year">2021</div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-fill" style="--h:66%"><span class="bar-val">4,9%</span></div>
+          <div class="bar-year">2022</div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-fill" style="--h:63%"><span class="bar-val">4,7%</span></div>
+          <div class="bar-year">2023</div>
+        </div>
+        <div class="bar-item active-bar">
+          <div class="bar-fill" style="--h:60%"><span class="bar-val">4,6%</span></div>
+          <div class="bar-year">2024</div>
+        </div>
+      </div>
+      <p class="chart-note">📌 Источник: Бюро национальной статистики РК, МОТ, 2024</p>
+    </div>
+
+    <div class="fact-boxes">
+      <div class="fact-box">
+        <span class="fact-num">01</span>
+        <p>Скрытая безработица: более <strong>23% занятых</strong> — самозанятые без стабильного дохода</p>
+      </div>
+      <div class="fact-box">
+        <span class="fact-num">02</span>
+        <p>В сельских регионах уровень реальной безработицы достигает <strong>8–12%</strong></p>
+      </div>
+      <div class="fact-box">
+        <span class="fact-num">03</span>
+        <p>Каждый год рынок труда пополняют <strong>150 000+ молодых</strong> специалистов</p>
+      </div>
+      <div class="fact-box">
+        <span class="fact-num">04</span>
+        <p>Гендерный разрыв в оплате труда составляет около <strong>27%</strong> не в пользу женщин</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3: ПРИЧИНЫ -->
+<section class="slide light-slide" id="slide3">
+  <div class="slide-content">
+    <div class="spk-pill spk-pill-2">👩‍🎓 Докладчик 2</div>
+    <div class="badge dark-badge">СЛАЙД 3 · ПРИЧИНЫ ПРОБЛЕМЫ</div>
+    <h2 class="dark-h">Почему возникает безработица?</h2>
+    <p class="section-sub dark-sub">Комплекс структурных, экономических и социальных факторов</p>
+
+    <div class="causes-grid">
+      <div class="cause-card" data-num="1">
+        <div class="cause-icon">🎓</div>
+        <h3>Несоответствие образования</h3>
+        <p>Переизбыток выпускников по гуманитарным специальностям при острой нехватке технических, IT и инженерных кадров. Система образования не успевает за рынком.</p>
+      </div>
+      <div class="cause-card" data-num="2">
+        <div class="cause-icon">🤖</div>
+        <h3>Автоматизация и цифровизация</h3>
+        <p>Технологии вытесняют низкоквалифицированный труд. Около 30% рутинных профессий рискуют исчезнуть к 2030 году в результате внедрения ИИ и роботизации.</p>
+      </div>
+      <div class="cause-card" data-num="3">
+        <div class="cause-icon">🗺️</div>
+        <h3>Региональные диспропорции</h3>
+        <p>Рабочие места концентрируются в Алматы и Астане. Инфраструктурные барьеры не позволяют работникам из регионов легко перемещаться к местам работы.</p>
+      </div>
+      <div class="cause-card" data-num="4">
+        <div class="cause-icon">💼</div>
+        <h3>Теневая экономика</h3>
+        <p>Около 30% работников заняты неформально: без контракта, пенсионных отчислений и социального страхования. Это искусственно снижает официальную статистику.</p>
+      </div>
+      <div class="cause-card" data-num="5">
+        <div class="cause-icon">📈</div>
+        <h3>Демографическое давление</h3>
+        <p>Молодое население Казахстана (~19 млн человек) ежегодно пополняет рынок труда 150–200 тысячами новых соискателей, что создаёт постоянное давление на занятость.</p>
+      </div>
+      <div class="cause-card" data-num="6">
+        <div class="cause-icon">💰</div>
+        <h3>Экономическая волатильность</h3>
+        <p>Зависимость экономики от нефти делает её уязвимой к внешним шокам: падение цен на сырьё немедленно ведёт к сокращениям и росту безработицы.</p>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <blockquote>«Проблема не только в количестве рабочих мест, но и в их качестве — достойная работа должна обеспечивать стабильный доход, социальную защиту и перспективу роста»</blockquote>
+      <cite>— Концепция развития рынка труда РК 2024–2029</cite>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4: ПУТИ РЕШЕНИЯ -->
+<section class="slide dark-slide" id="slide4">
+  <div class="slide-content">
+    <div class="spk-pill spk-pill-2">👩‍🎓 Докладчик 2</div>
+    <div class="badge">СЛАЙД 4 · ПУТИ РЕШЕНИЯ</div>
+    <h2>Как решить проблему?</h2>
+    <p class="section-sub">Государственные программы и системные реформы в Казахстане</p>
+
+    <div class="solutions-timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="tl-icon">📋</div>
+          <h3>Концепция развития рынка труда 2024–2029</h3>
+          <p>Долгосрочная государственная стратегия по созданию миллионов качественных рабочих мест через согласование экономических проектов с потребностями рынка труда.</p>
+          <div class="tl-tag">Правительство РК</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="tl-icon">🏫</div>
+          <h3>Реформа профессионально-технического образования</h3>
+          <p>Переориентация колледжей на технические и цифровые специальности. Дуальное обучение: 50% времени — на предприятии, 50% — в учебном заведении.</p>
+          <div class="tl-tag">Минпросвещения РК</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="tl-icon">🚀</div>
+          <h3>Программа «Bastau Business»</h3>
+          <p>Гранты и льготные микрокредиты для поддержки самозанятости и малого бизнеса среди молодёжи и социально уязвимых групп населения.</p>
+          <div class="tl-tag">Министерство труда РК</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="tl-icon">💻</div>
+          <h3>Цифровые центры занятости</h3>
+          <p>Платформа электронной биржи труда и Навигатор инновационных проектов для мониторинга найма и цифрового сопровождения трудоустройства.</p>
+          <div class="tl-tag">Digital Kazakhstan</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="tl-icon">🛡️</div>
+          <h3>Субсидированные рабочие места</h3>
+          <p>Государство субсидирует работодателей, берущих на работу уязвимые категории граждан: выпускников, людей старше 50 лет, лиц с инвалидностью.</p>
+          <div class="tl-tag">Фонд «Даму»</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5: МИРОВОЙ ОПЫТ -->
+<section class="slide light-slide" id="slide5">
+  <div class="slide-content">
+    <div class="spk-pill spk-pill-3">🧑‍💻 Докладчик 3</div>
+    <div class="badge dark-badge">СЛАЙД 5 · МИРОВОЙ ОПЫТ</div>
+    <h2 class="dark-h">Что делает мировое сообщество?</h2>
+    <p class="section-sub dark-sub">Эффективные модели борьбы с безработицей в разных странах</p>
+
+    <div class="world-grid">
+      <div class="world-card germany">
+        <div class="flag">🇩🇪</div>
+        <h3>Германия</h3>
+        <div class="world-badge">Уровень безработицы: 3,2%</div>
+        <ul>
+          <li><strong>Kurzarbeit</strong> — государство субсидирует зарплату при сокращении рабочего времени, предотвращая массовые увольнения</li>
+          <li><strong>Дуальная система образования</strong> — совмещение обучения с реальной практикой на производстве</li>
+          <li>Реформы Харца: гибкий рынок труда + строгая привязка пособий к поиску работы</li>
+        </ul>
+        <div class="world-result">✅ Результат: молодёжная безработица снизилась до 6%</div>
+      </div>
+
+      <div class="world-card japan">
+        <div class="flag">🇯🇵</div>
+        <h3>Япония</h3>
+        <div class="world-badge">Уровень безработицы: 2,5%</div>
+        <ul>
+          <li><strong>Hello Work</strong> — национальная сеть центров занятости с карьерным консультированием и биржей труда</li>
+          <li><strong>Reskilling</strong> — государство субсидирует переобучение работников на новые специальности (AI, робототехника)</li>
+          <li>Программа перевода сотрудников из умирающих отраслей в растущие</li>
+        </ul>
+        <div class="world-result">✅ Результат: 98% трудоустройства среди выпускников вузов</div>
+      </div>
+
+      <div class="world-card korea">
+        <div class="flag">🇰🇷</div>
+        <h3>Южная Корея</h3>
+        <div class="world-badge">Уровень безработицы: 3,1%</div>
+        <ul>
+          <li><strong>«Startup for All»</strong> — государственная поддержка стартапов: гранты, менторство, страховка от провала</li>
+          <li>Национальная система поддержки занятости для лиц без страховки</li>
+          <li>Субсидии на аренду жилья для молодёжи, ищущей работу в другом городе</li>
+        </ul>
+        <div class="world-result">✅ Результат: 40% новых рабочих мест создают стартапы</div>
+      </div>
+    </div>
+
+    <div class="ilo-block">
+      <div class="ilo-logo">🌐 МОТ (ILO)</div>
+      <h3>Международная организация труда</h3>
+      <div class="ilo-initiatives">
+        <div class="ilo-item">
+          <strong>Программы общественных работ</strong>
+          <p>Стимулируют занятость там, где частный сектор не справляется</p>
+        </div>
+        <div class="ilo-item">
+          <strong>Базовая социальная защита</strong>
+          <p>«Социальный пол» — минимальные гарантии дохода для всех граждан</p>
+        </div>
+        <div class="ilo-item">
+          <strong>Активная политика занятости</strong>
+          <p>Тренинги + биржи труда + наставничество для безработных</p>
+        </div>
+      </div>
+      <p class="ilo-note">📌 Казахстан является членом МОТ и частично применяет рекомендуемые стандарты</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 6: НАША ПОЗИЦИЯ -->
+<section class="slide hero-slide final-slide" id="slide6">
+  <div class="hero-bg final-bg"></div>
+  <div class="slide-content">
+    <div class="spk-pill spk-pill-3">🧑‍💻 Докладчик 3</div>
+    <div class="badge">СЛАЙД 6 · НАША ПОЗИЦИЯ</div>
+    <h2 class="white-h">Что можем сделать <span class="gold">мы?</span></h2>
+    <p class="section-sub white-sub">Собственная точка зрения на проблему и вклад каждого</p>
+
+    <div class="opinion-block">
+      <div class="opinion-text">
+        <p>Безработица в Казахстане — это не только проблема экономики. Это вопрос справедливости, достоинства и будущего страны. Официальная статистика в 4,6% не отражает реальную картину: миллионы людей работают в неформальном секторе без пенсии, страховки и стабильного дохода.</p>
+        <p>Мы убеждены, что решение лежит на пересечении <strong>качественного образования</strong>, <strong>поддержки предпринимательства</strong> и <strong>честной социальной политики</strong>.</p>
+      </div>
+    </div>
+
+    <div class="contribution-grid">
+      <div class="contrib-card">
+        <div class="contrib-icon">🧑‍🎓</div>
+        <h4>Каждый студент</h4>
+        <p>Осознанно выбирать профессию, ориентируясь на реальный спрос рынка. Изучать цифровые навыки, иностранные языки, предпринимательство.</p>
+      </div>
+      <div class="contrib-card">
+        <div class="contrib-icon">🏢</div>
+        <h4>Работодатели</h4>
+        <p>Инвестировать в обучение сотрудников, брать на стажировку молодёжь, создавать прозрачные условия труда без неформальных схем.</p>
+      </div>
+      <div class="contrib-card">
+        <div class="contrib-icon">🏛️</div>
+        <h4>Государство</h4>
+        <p>Реформировать систему образования, создавать условия для малого бизнеса и бороться с неформальной занятостью через легализацию.</p>
+      </div>
+      <div class="contrib-card">
+        <div class="contrib-icon">👥</div>
+        <h4>Гражданское общество</h4>
+        <p>Поддерживать волонтёрство, менторство и НКО, которые помогают безработным освоить новые навыки и найти своё место в жизни.</p>
+      </div>
+    </div>
+
+    <div class="final-quote">
+      <p>🇰🇿 <strong>Казахстан — молодая страна с молодым населением.</strong> Это наш главный ресурс. Инвестируя в людей сегодня, мы строим процветающую экономику завтра.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">🇰🇿 Безработица в Казахстане</div>
+    <p>Исследовательский проект · 2025</p>
+    <p class="footer-sources">Источники: Бюро национальной статистики РК · МОТ/ILO · Forbes Kazakhstan · Astana Times · gov.kz</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
