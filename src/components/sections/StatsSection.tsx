@@ -88,7 +88,7 @@ export default function StatsSection({ id }: { id: string }) {
                   <YAxis dataKey="category" type="category" axisLine={false} tickLine={false} tick={{fill: '#475569', fontSize: 13}} width={120} />
                   <Tooltip cursor={{fill: '#F8FAFC'}} contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }} />
                   <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={24}>
-                    {dataYouth.map((entry, index) => (
+                    {dataYouth.map((_, index) => (
                       <Cell key={`cell-${index}`} fill={index % 2 === 0 ? '#00AFCA' : '#FEC105'} />
                     ))}
                   </Bar>

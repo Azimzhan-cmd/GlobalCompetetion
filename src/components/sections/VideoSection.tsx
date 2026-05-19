@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { PlayCircle } from 'lucide-react';
+
 
 export default function VideoSection({ id }: { id: string }) {
   return (
