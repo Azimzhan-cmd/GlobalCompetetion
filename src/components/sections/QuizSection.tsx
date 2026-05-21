@@ -178,7 +178,7 @@ export default function QuizSection({ id }: { id: string }) {
                   </button>
                   <button
                     onClick={() => handleSwipe(true)}
-                    className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:text-white hover:bg-emerald-50 hover:border-emerald-500 transition-all flex items-center justify-center cursor-none shadow-lg shadow-emerald-950/20 hover:scale-105 active:scale-95"
+                    className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:text-white hover:bg-emerald-500 hover:border-emerald-500 transition-all flex items-center justify-center cursor-none shadow-lg shadow-emerald-950/20 hover:scale-105 active:scale-95"
                     title="Swipe Right / Да"
                   >
                     <Check className="w-6 h-6" />

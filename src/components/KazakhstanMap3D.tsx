@@ -121,6 +121,12 @@ export default function KazakhstanMap3D() {
   const [hoveredRegionId, setHoveredRegionId] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
+  // Sync state to mutable Ref to keep WebGL closure up to date without re-running useEffect
+  const activeRegionRef = useRef<Region | null>(null);
+  useEffect(() => {
+    activeRegionRef.current = activeRegion;
+  }, [activeRegion]);
+
   // Sound triggering refs
   const prevHoveredId = useRef<string | null>(null);
 
@@ -269,7 +275,6 @@ export default function KazakhstanMap3D() {
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
     let currentHoveredId: string | null = null;
-    let currentClickedId: string | null = null;
 
     // Handle mouse movement for parallax & raycasting
     const handlePointerMove = (event: PointerEvent) => {
@@ -278,19 +283,47 @@ export default function KazakhstanMap3D() {
       const y = event.clientY - rect.top;
 
       // Map to NDC [-1, 1]
-      mouse.x = (x / width) * 2 - 1;
-      mouse.y = -(y / height) * 2 + 1;
+      mouse.x = (x / rect.width) * 2 - 1;
+      mouse.y = -(y / rect.height) * 2 + 1;
     };
 
-    // Handle mouse click to lock selection
-    const handlePointerDown = () => {
-      if (currentHoveredId) {
-        currentClickedId = currentHoveredId === currentClickedId ? null : currentHoveredId;
-        const reg = REGIONS.find((r) => r.id === currentClickedId) || null;
-        setActiveRegion(reg);
+    // Handle mouse click to lock selection with instant raycast coordinate calculations
+    const handlePointerDown = (event: PointerEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      
+      const clickMouse = new THREE.Vector2(
+        (x / rect.width) * 2 - 1,
+        -(y / rect.height) * 2 + 1
+      );
+
+      raycaster.setFromCamera(clickMouse, camera);
+      const intersects = raycaster.intersectObjects(mapGroup.children, true);
+      let clickedId: string | null = null;
+      if (intersects.length > 0) {
+        let obj: THREE.Object3D | null = intersects[0].object;
+        while (obj && obj !== scene) {
+          if (obj.name && REGIONS.some(r => r.id === obj!.name)) {
+            clickedId = obj.name;
+            break;
+          }
+          obj = obj.parent;
+        }
+      }
+
+      const currentActive = activeRegionRef.current;
+      if (clickedId) {
+        if (currentActive && currentActive.id === clickedId) {
+          // Toggle off if clicking the active region again
+          setActiveRegion(null);
+        } else {
+          const reg = REGIONS.find((r) => r.id === clickedId) || null;
+          setActiveRegion(reg);
+        }
         soundCtrl.click();
       } else {
-        currentClickedId = null;
+        // Clicked blank space
         setActiveRegion(null);
       }
     };
@@ -321,16 +354,21 @@ export default function KazakhstanMap3D() {
 
       // Perform Raycasting
       raycaster.setFromCamera(mouse, camera);
-      const intersects = raycaster.intersectObjects(mapGroup.children);
+      const intersects = raycaster.intersectObjects(mapGroup.children, true);
 
+      let foundHoveredId: string | null = null;
       if (intersects.length > 0) {
-        const intersectedMesh = intersects[0].object as THREE.Mesh;
-        currentHoveredId = intersectedMesh.name;
-        setHoveredRegionId(currentHoveredId);
-      } else {
-        currentHoveredId = null;
-        setHoveredRegionId(null);
+        let obj: THREE.Object3D | null = intersects[0].object;
+        while (obj && obj !== scene) {
+          if (obj.name && REGIONS.some(r => r.id === obj!.name)) {
+            foundHoveredId = obj.name;
+            break;
+          }
+          obj = obj.parent;
+        }
       }
+      currentHoveredId = foundHoveredId;
+      setHoveredRegionId(currentHoveredId);
 
       // Trigger hover sound once on change
       if (currentHoveredId !== prevHoveredId.current) {
@@ -347,9 +385,10 @@ export default function KazakhstanMap3D() {
         const mat = materials[region.id];
         if (!mesh || !mat || !line) return;
 
-        // Target height
+        // Target height based on hover or live ref clicked state
         const isHovered = region.id === currentHoveredId;
-        const isClicked = region.id === currentClickedId;
+        const currentActive = activeRegionRef.current;
+        const isClicked = currentActive ? region.id === currentActive.id : false;
         mesh.userData.targetZ = isHovered || isClicked ? 0.38 : 0;
 
         // Smooth elevation transition
